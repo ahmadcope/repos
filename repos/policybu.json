@@ -1,0 +1,36 @@
+{
+   
+      "mode": "All",
+      "policyRule": {
+        "if": {
+          "anyOf": [
+            {
+              "field": "tags['fm_az_businessUnit']",
+              "exists": "false"
+            },
+            {
+              "value": "[tolower(field('tags.fm_az_businessUnit'))]",
+              "notIn": [
+                "sf",
+                "mf",
+                "it",
+                "icm",
+                "ep",
+                "is"
+              ]
+
+              "parameters": {}
+              
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+     
+    
+ 
+         } 
+        
+        
+}
